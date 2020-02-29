@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      footballTeams:[]
+    }
+  },
+  mounted(){
+    fetch('http://api.football-data.org/v2/matches',{
+      headers:{ 
+      'X-Auth-Token':'93fb448d3a40433485767a9bda2a60e9'}
+    })
   }
 }
 </script>
