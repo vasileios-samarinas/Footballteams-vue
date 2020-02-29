@@ -1,11 +1,14 @@
 <template lang="html">
 <div v-if="team" id="TeamDetail">
-<h2>{{team.name}}</h2>
-<p>{{team.venue}}</p>
-<p>{{team.clubColors}}</p>
-
+<h1>{{team.name}}</h1>
+<p>Stadium: {{team.venue}}</p>
+<p>Club Colors: {{team.clubColors}}</p>
+<img :src="team.crestUrl">
 
 </div>
+
+
+
 </template>
 
 <script>
