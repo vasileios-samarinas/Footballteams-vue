@@ -1,21 +1,26 @@
 <template>
   <div id="app">
-    <h1>Teams</h1>
+    <h1>English Football Teams</h1>
       <team-select :teams="teams"/>
+      <team-detail :team="selectedTeam"/>
   </div>
 </template>
 
 <script>
+import {eventBus} from "./main.js"
 import TeamSelect from './components/TeamSelect.vue'
+import TeamDetail from './components/TeamDetail.vue'
 
 export default {
   data(){
     return{
-      teams:[]
+      teams:[],
+      selectedTeam: null
     }
   },
   components:{
-    "team-select": TeamSelect
+    "team-select": TeamSelect,
+    "team-detail":TeamDetail
   },
   mounted(){
     fetch('http://api.football-data.org/v2/teams',{
@@ -24,6 +29,10 @@ export default {
     })
     .then(res=>res.json())
     .then(teams=>this.teams = teams.teams)
+
+    eventBus.$on('team-selected',(team)=>{
+        this.selectedTeam=team;
+        })
   }
 }
 </script>
