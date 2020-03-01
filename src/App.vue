@@ -1,6 +1,9 @@
 <template>
   <div id="app">
+    <header class="header">
+      <img src="https://assets.change.org/photos/1/gy/bi/hCGybivTSARwGuK-800x450-noPad.jpg?1528973282" alt="Girl in a jacket">
     <h1>English Football Teams</h1>
+    </header>
       <team-select :teams="teams"/>
       <team-detail :team="selectedTeam"/>
   </div>
@@ -44,8 +47,28 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+
+.header{
+    height: 80px;
+    background: #8888;
+    margin-bottom: 20px;
+  }
+
+
+  .header img {
+  float: left;
+  height: 85px;
+  background: blue;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
 
 
 </style>
