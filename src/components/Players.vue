@@ -1,7 +1,16 @@
 <template lang="html">
-<div>
-  <player-data v-for="(player, index) in players" :player="player" :key="index"></player-data>
-</div>
+
+  <table v-if="players.length > 0">
+
+    <tr>
+      <th>Name</th>
+      <th>Nationality</th>
+      <th>Position</th>
+    </tr>
+    <player-data v-for="(player, index) in players" :player="player" :key="index"></player-data>
+  </table>
+
+
 </template>
 
 <script>
