@@ -6,6 +6,7 @@
 
 <script>
 
+import Player from './Player'
 
 
 

@@ -6,6 +6,7 @@
 <img :src="team.crestUrl"  class="logo">
 <button v-on:click="showTeamplayers">Show Team Players</button>
   <players-select :players="players"/>
+  <player-data :player="player"/>
 </div>
 
 
@@ -27,7 +28,7 @@ export default {
     return{players:[]}
   },
   components:{"players-select": Players,
-},
+"player-data":Player},
   name:'team-detail',
   props:['team'],
   methods: {
@@ -38,13 +39,13 @@ export default {
         })
       .then(res=>res.json())
       .then(team=>this.players =team.squad)
-
-      // eventBus.$on('players-select',(team)=>{
-      //     this.selectedTeam=team;
-      //     })
+      //
+      // eventBus.$on('players-selected',(player)=>{
+      //     this.selectedPlayer=player;
+          }
     }
   }
-}
+
 </script>
 
 <style lang="css" scoped>

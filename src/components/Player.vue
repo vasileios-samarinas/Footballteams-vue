@@ -6,7 +6,7 @@
 import {eventBus} from '../main.js'
 export default {
   name: 'player-data',
-  props: 
+  props: ['player']
 }
 </script>
 
