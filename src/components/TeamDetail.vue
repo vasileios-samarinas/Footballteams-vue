@@ -6,14 +6,7 @@
 <img :src="team.crestUrl"  class="logo">
 <button v-on:click="showTeamplayers">Show Team Players</button>
   <players-select :players="players"/>
-  <player-data :player="player"/>
 </div>
-
-
-
-
-
-
 
 </template>
 
@@ -21,14 +14,13 @@
 
 import { eventBus } from '../main.js'
 import Players from './Players.vue'
-import Player from './Player.vue'
+
 
 export default {
   data(){
     return{players:[]}
   },
-  components:{"players-select": Players,
-"player-data":Player},
+  components:{"players-select": Players},
   name:'team-detail',
   props:['team'],
   methods: {

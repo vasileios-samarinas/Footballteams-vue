@@ -1,5 +1,5 @@
 <template lang="html">
-
+<h4>{{player.name}}</h4>
 </template>
 
 <script>
